@@ -51,86 +51,115 @@ fun soal04_nestedIf(isWeekend: Boolean, isRaining: Boolean): String {
 
 // 5. Cek dua string apakah sama (equals / ==). Jika sama -> true. Beda -> false.
 fun soal05_stringEquals(str1: String, str2: String): Boolean {
-    // TODO
-    return false
+    return str1 === str2
 }
 
 // 6. When Paling Sederhana. Angka 1 -> "Satu", 2 -> "Dua", selain itu -> "Banyak"
 fun soal06_whenSimple(angka: Int): String {
-    // TODO
-    return ""
+    when (angka) {
+        1 -> return "Satu"
+        2 -> return "Dua"
+        else -> return "Banyak"
+    }
 }
 
 // 7. When Banyak Nilai Sekaligus Koma. Jika angka 1, 3, 5 -> "Ganjil", 2, 4, 6 -> "Genap", else ->
 // "Lainnya"
 fun soal07_whenComma(angka: Int): String {
-    // TODO
-    return ""
+    when (angka) {
+        1, 3, 5 -> return "Ganjil"
+        2, 4, 6 -> return "Genap"
+        else -> return "Lainnya"
+    }
 }
 
 // 8. When Range. Jika angka dalam rentang (in) 1 sampai 10 -> "Kecil", 11 sampai 20 -> "Sedang",
 // else -> "Besar"
 fun soal08_whenRange(angka: Int): String {
-    // TODO
-    return ""
+    when (angka) {
+        in 1..10 -> return "Kecil"
+        in 11..20 -> return "Sedang"
+        else -> return "Besar"
+    }
 }
 
 // 9. When Bukan Di Range(!in). Jika x BUKAN rentang 1..100, return "Invalid". Jika di rentang,
 // return "Valid"
 fun soal09_whenNotIn(x: Int): String {
-    // TODO
-    return ""
+    when (x) {
+        !in 1..100 -> return "Invalid"
+        else -> return "Valid"
+    }
 }
 
 // 10. When Expression. Gabung dengan '=' (sama dengan). Return string langsung berdasar boolean
 // isLapar. True->"Makan", False->"Kenyang"
-fun soal10_whenExpr(isLapar: Boolean): String = "" // TODO
+fun soal10_whenExpr(isLapar: Boolean): String =
+        when (isLapar) {
+            true -> "Makan"
+            false -> "Kenyang"
+        }
 
 // 11. When Type Checks (is). Parameter arg: Any. Jika Int -> "Angka", jika String -> "Teks", jika
 // Boolean -> "Bool"
 fun soal11_whenIs(arg: Any): String {
-    // TODO
-    return ""
+    when (arg) {
+        is Int -> return "Angka"
+        is String -> return "Teks"
+        is Boolean -> return "Bool"
+        else -> return "Tidak Diketahui"
+    }
 }
 
 // 12. Smart Cast. Jika arg `is String`, kembalikan panggil `.length`-nya String tersebut. Else
 // return 0.
 fun soal12_smartCast(arg: Any): Int {
-    // TODO
-    return 0
+    when (arg) {
+        is String -> return arg.length
+        else -> return 0
+    }
 }
 
 // 13. When tanpa argumen. Cek kondisi umur > 17 dan ktp == true -> "Dewasa". umur > 17 ktp == false
 // -> "Bikin KTP". Else -> "Anak"
 fun soal13_whenNoArgs(umur: Int, ktp: Boolean): String {
-    // TODO
-    return ""
+    when {
+        umur > 17 && ktp -> return "Dewasa"
+        umur > 17 && !ktp -> return "Bikin KTP"
+        else -> return "Anak"
+    }
 }
 
 // 14. If majemuk AND (&&). Jika jam >= 8 DAN jam <= 16 -> true (Jam Kerja), Else -> false
 fun soal14_jamKerja(jam: Int): Boolean {
-    // TODO
-    return false
+    if (jam >= 8 && jam <= 16) return true else return false
 }
 
 // 15. If majemuk OR (||). Jika isDiscount = true ATAU total > 100 -> bayar total - 20. Else bayar
 // total.
 fun soal15_diskon(isDiscount: Boolean, total: Int): Int {
-    // TODO
-    return total
+    if (isDiscount || total >= 100) return (total - 20) else return total
 }
 
 // 16. Returning inside When. Hitung pajak.
 // Jika kategori "A" -> return gaji * 10% (.1). "B" -> gaji * 5% (.05). Else -> 0.
 fun soal16_pajak(gaji: Double, kategori: String): Double {
-    // TODO
-    return 0.0
+    when (kategori) {
+        "A" -> return gaji * 0.1
+        "B" -> return gaji * 0.05
+        else -> return 0.0
+    }
 }
 
 // 17. Block di dalam When. Jika x == 1, print("Halo") lalu return "Satu". Else return "Bukan"
 fun soal17_whenBlock(x: Int): String {
-    // TODO
-    return ""
+    when (x) {
+        1 -> {
+            println("Halo")
+            return "Satu"
+        }
+        else -> return "Bukan"
+    }
 }
 
 // ===================================
