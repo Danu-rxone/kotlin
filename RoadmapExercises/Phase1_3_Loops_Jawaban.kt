@@ -168,9 +168,9 @@ fun soal15_labeledContinue_ans(): String {
     // PENJELASAN:
     // Labeled continue melompat kbali dan memulai iterasi dari level for yang ditentukan label.
     var result = ""
-    loopLuar@ for (i in 1..2) {
-        for (j in 1..3) {
-            if (j == 2) continue@loopLuar
+    for (i in 1..2) {
+        loopJ@ for (j in 1..3) {
+            if (j == 2) continue@loopJ
             result += "($i:$j)"
         }
     }
